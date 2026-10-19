@@ -1,0 +1,73 @@
+/* ---------- Couleurs : définies une seule fois, réutilisées partout ---------- */
+:root {
+  --bg: #fbf6ea;      /* papier */
+  --fg: #1d1a16;      /* encre */
+  --muted: #4a443b;   /* texte secondaire */
+  --accent: #b3261e;  /* liens */
+  --border: #1d1a16;
+  --focus: #0b57d0;
+}
+
+/* Mode sombre : suit le réglage du système (iPhone, Mac…) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14120f;
+    --fg: #f4eee0;
+    --muted: #cfc6b3;
+    --accent: #ff8a80;
+    --border: #f4eee0;
+    --focus: #8ab4f8;
+  }
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 1.125rem;  /* 18px par défaut, mais suit le réglage du navigateur */
+  line-height: 1.65;
+}
+
+header, main, footer {
+  max-width: 44rem;   /* largeur de lecture confortable */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header { border-bottom: 4px double var(--border); }
+footer { border-top: 4px double var(--border); color: var(--muted); font-size: 0.9rem; text-align: center; margin-top: 3rem; }
+
+h1, h2, h3 { line-height: 1.2; }
+h1 { font-size: 2.2rem; }
+
+a { color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 2px; }
+a:hover { text-decoration-thickness: 4px; }
+
+/* ---------- Accessibilité ---------- */
+
+/* Focus clavier : bien visible, jamais supprimé */
+:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Lien d'évitement : caché hors écran, visible dès qu'il reçoit le focus */
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  padding: 0.75rem 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  z-index: 10;
+}
+.skip:focus { left: 0; }
+
+/* Respect des personnes sensibles aux animations */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
