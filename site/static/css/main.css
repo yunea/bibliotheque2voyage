@@ -88,3 +88,20 @@ nav a { padding: 0.5rem 0; font-weight: 600; }  /* zone cliquable plus haute */
 .liste-textes li { padding: 1rem 0; border-bottom: 2px dotted var(--border); }
 .liste-textes .titre { font-size: 1.2rem; font-weight: 700; }
 .meta { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- Choix (durées, thèmes) ---------- */
+.choix { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;            /* cible tactile confortable */
+  padding: 0.5rem 1.1rem;
+  border: 3px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--border);
+}
+.bouton:hover { background: var(--fg); color: var(--bg); }

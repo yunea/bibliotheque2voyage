@@ -9,3 +9,8 @@ title = "Bibliothèque voyageuse"
 
 # Langue par défaut : le français (donc <html lang="fr">).
 defaultContentLanguage = "fr"
+
+# Nos deux façons de classer les textes (remplacent tags/categories)
+[taxonomies]
+  duree = "durees"
+  theme = "themes"

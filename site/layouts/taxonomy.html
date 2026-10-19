@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <ul class="choix">
+    {{ range .Pages }}
+    <li>
+      <a class="bouton" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="meta">{{ len .Pages }} {{ if eq (len .Pages) 1 }}texte{{ else }}textes{{ end }}</span>
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}

@@ -2,8 +2,26 @@
   <h1>{{ site.Title }}</h1>
   <p>Une petite bibliothèque sans Internet, le temps d'un trajet.</p>
 
+  <section aria-labelledby="h-duree">
+    <h2 id="h-duree">Tu as combien de temps ?</h2>
+    <ul class="choix">
+      {{ range (site.GetPage "/durees").Pages }}
+      <li><a class="bouton" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-theme">
+    <h2 id="h-theme">Ou choisis un thème</h2>
+    <ul class="choix">
+      {{ range (site.GetPage "/themes").Pages }}
+      <li><a class="bouton" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </section>
+
   <section aria-labelledby="h-lectures">
-    <h2 id="h-lectures">Lectures</h2>
+    <h2 id="h-lectures">Toutes les lectures</h2>
     {{ partial "liste.html" (where site.RegularPages "Section" "lectures") }}
   </section>
 {{ end }}

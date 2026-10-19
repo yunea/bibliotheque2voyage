@@ -5,6 +5,7 @@ date: 2026-10-19
 duree_minutes: 5
 type_texte: "Nouvelle"
 themes: ["curiosites-et-culture"]
+durees: ["5-minutes"]
 source: "Écrit pour le projet"
 source_url: ""
 licence: "Œuvre personnelle"
