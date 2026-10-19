@@ -1,0 +1,10 @@
+# Site généré par Hugo (reconstruit à volonté)
+site/public/
+site/resources/_gen/
+.hugo_build.lock
+
+# Dépendances Node
+node_modules/
+
+# Fichiers parasites de macOS
+.DS_Store
