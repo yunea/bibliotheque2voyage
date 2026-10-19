@@ -1,3 +1,11 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+# Adresse de base du site. "/" = relative à la racine du serveur.
+baseURL = "/"
+
+# Les liens générés seront relatifs ("../css/main.css") : le site
+# fonctionnera quelle que soit l'adresse d'accès (10.42.0.1, biblio.local…).
+relativeURLs = true
+
+title = "Bibliothèque voyageuse"
+
+# Langue par défaut : le français (donc <html lang="fr">).
+defaultContentLanguage = "fr"
