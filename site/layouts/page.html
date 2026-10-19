@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article>
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p>
+      {{ with .Params.auteur }}{{ . }}{{ end }}
+      {{ with .Params.duree_minutes }} · environ {{ . }} min de lecture{{ end }}
+    </p>
+  </header>
+
+  {{ .Content }}
+
+  <section aria-labelledby="h-credits">
+    <h2 id="h-credits">À propos de ce texte</h2>
+    <dl>
+      {{ with .Params.source }}<dt>Source</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.licence }}<dt>Licence ou statut</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with .Params.langue }}<dt>Langue</dt><dd>{{ . }}</dd>{{ end }}
+    </dl>
+  </section>
+</article>
+{{ end }}

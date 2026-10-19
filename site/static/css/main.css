@@ -32,14 +32,14 @@ body {
   line-height: 1.65;
 }
 
-header, main, footer {
+body > header, main, body > footer {
   max-width: 44rem;   /* largeur de lecture confortable */
   margin: 0 auto;
   padding: 1rem;
 }
 
-header { border-bottom: 4px double var(--border); }
-footer { border-top: 4px double var(--border); color: var(--muted); font-size: 0.9rem; text-align: center; margin-top: 3rem; }
+body > header { border-bottom: 4px double var(--border); }
+body > footer { border-top: 4px double var(--border); color: var(--muted); font-size: 0.9rem; text-align: center; margin-top: 3rem; }
 
 h1, h2, h3 { line-height: 1.2; }
 h1 { font-size: 2.2rem; }
