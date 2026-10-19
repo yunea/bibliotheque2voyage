@@ -105,3 +105,42 @@ nav a { padding: 0.5rem 0; font-weight: 600; }  /* zone cliquable plus haute */
   box-shadow: 4px 4px 0 var(--border);
 }
 .bouton:hover { background: var(--fg); color: var(--bg); }
+
+/* ---------- Jeu : Memory ---------- */
+.statut { font-weight: 700; min-height: 3.5rem; }
+.score { color: var(--muted); }
+
+.plateau {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.carte {
+  width: 100%;
+  aspect-ratio: 1;
+  min-height: 4.5rem;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 3px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: var(--fg);
+}
+.carte .symbole { font-size: 1.8rem; line-height: 1; }
+.carte .note { font-size: 0.75rem; }
+
+/* États : jamais indiqués par la couleur seule (texte, bordure, motif) */
+.carte[data-etat="cachee"] { background: var(--fg); color: var(--bg); }
+.carte[data-etat="visible"] { box-shadow: 4px 4px 0 var(--border); }
+.carte[data-etat="trouvee"] { border-style: dashed; cursor: default; }

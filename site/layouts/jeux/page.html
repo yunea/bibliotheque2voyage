@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div id="jeu"></div>
+  <noscript><p>Ce jeu a besoin de JavaScript pour fonctionner.</p></noscript>
+  <p><a href="{{ "jeux/" | relURL }}">← Tous les jeux</a></p>
+</article>
+{{ with .Params.script }}<script src="{{ . | relURL }}" defer></script>{{ end }}
+{{ end }}
