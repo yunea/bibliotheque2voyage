@@ -1,4 +1,9 @@
 {{ define "main" }}
   <h1>{{ site.Title }}</h1>
   <p>Une petite bibliothèque sans Internet, le temps d'un trajet.</p>
+
+  <section aria-labelledby="h-lectures">
+    <h2 id="h-lectures">Lectures</h2>
+    {{ partial "liste.html" (where site.RegularPages "Section" "lectures") }}
+  </section>
 {{ end }}

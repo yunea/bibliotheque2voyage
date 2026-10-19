@@ -1,0 +1,16 @@
+{{/* Reçoit une collection de pages et les affiche en liste */}}
+{{ if . }}
+<ul class="liste-textes">
+  {{ range . }}
+  <li>
+    <a class="titre" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <p class="meta">
+      {{ with .Params.auteur }}{{ . }}{{ end }}
+      {{ with .Params.duree_minutes }} · environ {{ . }} min{{ end }}
+    </p>
+  </li>
+  {{ end }}
+</ul>
+{{ else }}
+<p>Rien ici pour l'instant.</p>
+{{ end }}

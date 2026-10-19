@@ -10,7 +10,11 @@
   <a class="skip" href="#contenu">Aller au contenu</a>
 
   <header>
-    <a href="{{ "" | relURL }}">{{ site.Title }}</a>
+    <a class="logo" href="{{ "" | relURL }}">{{ site.Title }}</a>
+    <nav aria-label="Principal">
+      <a href="{{ "" | relURL }}">Accueil</a>
+      <a href="{{ "lectures/" | relURL }}">Lectures</a>
+    </nav>
   </header>
 
   <main id="contenu" tabindex="-1">
