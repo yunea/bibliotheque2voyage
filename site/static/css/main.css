@@ -200,3 +200,43 @@ nav a { padding: 0.5rem 0; font-weight: 600; }  /* zone cliquable plus haute */
 .directions [data-dir="droite"] { grid-column: 3; grid-row: 2; }
 
 .actions-jeu { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* ---------- Jeu : Démineur ---------- */
+.champ {
+  width: 100%;
+  max-width: 26rem;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 4px;
+  margin: 1rem 0;
+}
+.champ td { padding: 0; }
+
+.case {
+  width: 100%;
+  aspect-ratio: 1;
+  min-height: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  touch-action: manipulation;     /* pas de zoom au double-toucher */
+  border: 2px solid var(--border);
+  border-radius: 0.35rem;
+  background: var(--fg);          /* case cachée : tuile pleine */
+  color: var(--bg);
+}
+.case:focus-visible { outline-offset: 1px; }
+
+/* États : jamais indiqués par la couleur seule (forme, bordure, symbole) */
+.case[data-etat="revelee"] { background: var(--bg); color: var(--fg); border-style: dotted; cursor: default; }
+.case[data-etat="drapeau"] { background: var(--bg); color: var(--fg); border-width: 4px; }
+.case[data-explose="true"] { outline: 3px double var(--border); outline-offset: 1px; }
+
+/* Boutons interrupteurs (mode drapeau, niveau actif) */
+.bouton[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.bouton[aria-pressed="true"]::before { content: "✓ "; content: "✓ " / ""; }
