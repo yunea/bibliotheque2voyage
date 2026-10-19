@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header>
+    <a href="{{ "" | relURL }}">{{ site.Title }}</a>
+  </header>
+
+  <main id="contenu" tabindex="-1">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer>
+    <p>Ce site fonctionne sans Internet. Aucun compte, aucun cookie, aucun suivi.</p>
+  </footer>
+</body>
+</html>
